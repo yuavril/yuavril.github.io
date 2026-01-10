@@ -18,8 +18,9 @@ const result = `
 `;
 
 const codeEl = document.getElementById("code");
-const outputEl = document.getElementById("output");
 const cursorEl = document.getElementById("cursor");
+const outputEl = document.getElementById("output");
+const terminalBoxEl = document.getElementById("terminalbox");
 
 let i = 0;
 
@@ -31,29 +32,29 @@ function typeQuery() {
   } else {
     setTimeout(() => {
       cursorEl.style.display = "none";
-      showResult();
       highlightSQL();
+      showResult();
     }, 400);
   }
 }
 
 function showResult() {
   outputEl.textContent = result;
-  outputEl.classList.remove("hidden");
+  terminalBoxEl.classList.remove("hidden");
+
   requestAnimationFrame(() => {
-    outputEl.classList.add("show");
+    terminalBoxEl.classList.add("show");
   });
 }
 
 function highlightSQL() {
   let html = codeEl.textContent;
-  /* For the keywords SELECT, FROM, WHERE */
+
   html = html.replace(
     /\b(SELECT|FROM|WHERE)\b/g,
     `<span class="sql-keyword">$1</span>`
   );
 
-  /* For the keywords IN, AND */
   html = html.replace(
     /\b(IN|AND)\b/g,
     `<span class="sql-operator">$1</span>`
@@ -62,7 +63,11 @@ function highlightSQL() {
   html = html.replace(
     /'([^']*)'/g,
     `<span class="sql-string">'$1'</span>`
-  )
-codeEl.innerHTML = html + `<span id="cursor">▍</span>`;
+  );
+
+  codeEl.innerHTML = html;
+  codeEl.appendChild(cursorEl);
 }
+
 typeQuery();
+
