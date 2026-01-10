@@ -35,8 +35,31 @@ body {
   box-shadow:
   0 1px 1px rgba(0, 0, 0, 0.04),
   0 8px 24px rgba(0, 0, 0, 0.06);
+}
 
+#terminalbox {
+    margin-top: 28px;
+    background: #0f172a;
+    color: #e5e7eb;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.25);
+    max-width: 700px;
 
+}
+
+.terminal-header {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 10px;   
+}
+
+#output {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 pre {
@@ -44,6 +67,8 @@ pre {
   line-height: 1.65;
   white-space: pre-wrap;
   margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 #output {
@@ -120,6 +145,7 @@ pre {
 .editor-body {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* Highlight words like a real SQL query */
