@@ -23,18 +23,21 @@ const outputEl = document.getElementById("output");
 const terminalBoxEl = document.getElementById("terminalbox");
 
 let i = 0;
+let buffer = "";
+
 
 function typeQuery() {
   if (i < query.length) {
-    cursorEl.insertAdjacentText("beforebegin", query[i]);
+    buffer += query[i];
     i++;
+
+    codeEl.innerHTML = highlightSQL(buffer) + `<span id="cursor"></span>`;
+
     setTimeout(typeQuery, 35);
-  } else {
-    setTimeout(() => {
-      cursorEl.style.display = "none";
-      highlightSQL();
-      showResult();
-    }, 400);
+  } 
+  else {
+    document.getElementById("cursor").style.display = "none";
+    showResult();
   }
 }
 
@@ -47,26 +50,11 @@ function showResult() {
   });
 }
 
-function highlightSQL() {
-  let html = codeEl.textContent;
-
-  html = html.replace(
-    /\b(SELECT|FROM|WHERE)\b/g,
-    `<span class="sql-keyword">$1</span>`
-  );
-
-  html = html.replace(
-    /\b(IN|AND)\b/g,
-    `<span class="sql-operator">$1</span>`
-  );
-
-  html = html.replace(
-    /'([^']*)'/g,
-    `<span class="sql-string">'$1'</span>`
-  );
-
-  codeEl.innerHTML = html;
-  codeEl.appendChild(cursorEl);
+function highlightSQL(text) {
+  return text
+    .replace(/\b(SELECT|FROM|WHERE)\b/g, `<span class="sql-keyword">$1</span>`)
+    .replace(/\b(IN|AND)\b/g, `<span class="sql-operator">$1</span>`)
+    .replace(/'([^']*)'/g, `<span class="sql-string">'$1'</span>`);
 }
 
 typeQuery();

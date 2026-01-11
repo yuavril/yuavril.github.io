@@ -72,7 +72,7 @@ pre {
 }
 
 #output {
-  color: #333;
+  color: #e5e7eb;
   font-size: 15px;
 }
 
@@ -161,3 +161,11 @@ pre {
 .sql-string {
   color: #dc2626;
 }
+
+/* Make the two boxes be the same length */
+#codebox,
+#terminalbox {
+  width: 100%;
+}
+
+
