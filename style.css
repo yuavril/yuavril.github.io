@@ -29,7 +29,7 @@ body {
   border: 1px solid #e2e2e2;
   border-radius: 8px;
   padding: 18px 20px;
-  display: inline-flex;
+  display: block;
   align-items: flex-start;
   min-width: 360px;
   box-shadow:
