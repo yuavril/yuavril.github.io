@@ -5,10 +5,10 @@ WHERE field IN ('statistics', 'economics') AND curiosity = TRUE;`;
 const result = `-- query executed in 16 ms
 
 Hello! My name is Avril, and I am a student at the University of Michigan pursuing a double major in Statistics and Economics. I'm the one people turn to when they need ad-hoc spreadsheets turned into reliable systems.
-In my free time, I like to canoe, raise tradescantia plants, and read science fiction novels. <span class="sql-comment">-- I've also started learning how to play the kalimba!</span>
+In my free time, I like to canoe, raise tradescantia plants, and read science fiction novels. I've also started learning how to play the kalimba!
 
-> Resume: <a href="resume.pdf" target="_blank">view_pdf</a>
-> Linkedin: <a href="www.linkedin.com/in/avril-yu-b0a62a2b0" target="_blank">open_profile</a>
+> Resume: <a href="https://github.com/yuavril/yuavril.github.io/blob/main/Resume%20Avril%20Yu.pdf" target="_blank">view_pdf</a>
+> Linkedin: <a href="https://www.linkedin.com/in/avril-yu-b0a62a2b0/" target="_blank">open_profile</a>
 `;
 
 const codeEl = document.getElementById("code");
