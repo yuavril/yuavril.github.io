@@ -2,19 +2,13 @@ const query = `SELECT name, focus, interests
 FROM students
 WHERE field IN ('statistics', 'economics') AND curiosity = TRUE;`;
 
-const result = `
--- query executed in 16 ms
+const result = `-- query executed in 16 ms
 
-> name: Avril
+Hello! My name is Avril, and I am a student at the University of Michigan pursuing a double major in Statistics and Economics. I'm the one people turn to when they need ad-hoc spreadsheets turned into reliable systems.
+In my free time, I like to canoe, raise tradescantia plants, and read science fiction novels. <span class="sql-comment">-- I've also been learning how to play the kalimba in my free time!</span>
 
-> focus:
-  - statistics
-  - economics
-
-> interests:
-  - decision-making
-  - incentives
-  - systems
+> Resume: <a href="resume.pdf" target="_blank">view_pdf</a>
+> Linkedin: <a href="https://linkedin.com/in/yourusername" target="_blank">open_profile</a>
 `;
 
 const codeEl = document.getElementById("code");

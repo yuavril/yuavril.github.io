@@ -150,4 +150,11 @@ pre {
   color: #dc2626;
 }
 
+.sql-comment {
+  color: #22c55e;       /* light green */
+  opacity: 0.9;
+  font-style: italic;
+}
+
+
 
