@@ -36,7 +36,7 @@ function typeQuery() {
 }
 
 function showResult() {
-  outputEl.textContent = result;
+  outputEl.innerHTML = result;
   terminalBoxEl.classList.remove("hidden");
 
   requestAnimationFrame(() => {
